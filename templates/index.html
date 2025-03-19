@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            width: 50%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bank System</h1>
+    <form action="/create_account" method="post">
+        <label>Account Number:</label>
+        <input type="text" name="account_number"><br><br>
+        <label>Name:</label>
+        <input type="text" name="name"><br><br>
+        <label>Balance:</label>
+        <input type="number" name="balance"><br><br>
+        <input type="submit" value="Create Account">
+    </form>
+    <form action="/deposit" method="post">
+        <label>Account Number:</label>
+        <input type="text" name="account_number"><br><br>
+        <label>Amount:</label>
+        <input type="number" name="amount"><br><br>
+        <input type="submit" value="Deposit">
+    </form>
+    <form action="/withdraw" method="post">
+        <label>Account Number:</label>
+        <input type="text" name="account_number"><br><br>
+        <label>Amount:</label>
+        <input type="number" name="amount"><br><br>
+        <input type="submit" value="Withdraw">
+    </form>
+    <form action="/check_balance" method="post">
+        <label>Account Number:</label>
+        <input type="text" name="account_number"><br><br>
+        <input type="submit" value="Check Balance">
+    </form>
+</body>
+</html>
