@@ -2,11 +2,22 @@ from flask import Flask, render_template, request, redirect, url_for
 from bank import Bank
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
+from dotenv import load_dotenv
+import os
+
 
 app = Flask(__name__)
 
-uri = "mongodb+srv://admin:a6vwMyhKjq1ZUULP@bank-clustor.eefie.mongodb.net/?retryWrites=true&w=majority&appName=bank-clustor"
-db_name = "customers"
+load_dotenv()
+
+uri = os.getenv("MONGO_URI")
+username = os.getenv("MONGO_USERNAME")
+password = os.getenv("MONGO_PASSWORD")
+cluster_name = os.getenv("MONGO_CLUSTER_NAME")
+db_name = os.getenv("MONGO_DB_NAME")
+
+
+uri = uri.replace("{MONGO_USERNAME}", username).replace("{MONGO_PASSWORD}", password).replace("{MONGO_CLUSTER_NAME}", cluster_name)
 
 # Create a new client and connect to the server
 client = MongoClient(uri, server_api=ServerApi('1'))
