@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bank-system-pod
+
+spec: 
+  containers:
+    - name: bank-system-ctr
+      image: anubislord2109/bank-system:latest
+      ports:
+      - containerPort: 5000
+      imagePullPolicy: Always
